@@ -1,7 +1,7 @@
 /**
  * InstaCheck — Atelier Zero Edition
  * Mobile-first, animated reveals, local processing
- * Fixed: robust following.json parser
+ * Fixed: robust parser untuk following.json tanpa "value"
  */
 'use strict';
 
@@ -40,14 +40,36 @@ const icons = {
 const extractUsernames = (data, sourceType) => {
     const usernames = new Set();
     
-    // Helper to process an array of entries (each entry has string_list_data)
+    // Helper to extract username from an item in string_list_data
+    const extractUsernameFromItem = (item) => {
+        // Try "value" first (common format)
+        if (item?.value) {
+            return item.value.trim().toLowerCase();
+        }
+        // Fallback: extract from "href" (e.g., https://www.instagram.com/_u/username)
+        if (item?.href) {
+            // Remove query string, then get the last path segment
+            const url = item.href.split('?')[0];
+            const parts = url.split('/');
+            const username = parts[parts.length - 1];
+            if (username && username !== '_u') {
+                return username.trim().toLowerCase();
+            }
+            // Sometimes the structure is /_u/username, so fallback to second last if needed
+            if (parts.length >= 2 && parts[parts.length - 2] === '_u') {
+                return parts[parts.length - 1].trim().toLowerCase();
+            }
+        }
+        return null;
+    };
+
     const processEntries = (entries) => {
         if (!Array.isArray(entries)) return;
         for (const entry of entries) {
             const listData = entry?.string_list_data;
             if (Array.isArray(listData)) {
                 for (const item of listData) {
-                    const u = item?.value?.trim();
+                    const u = extractUsernameFromItem(item);
                     if (u) usernames.add(u.toLowerCase());
                 }
             }
@@ -56,14 +78,12 @@ const extractUsernames = (data, sourceType) => {
 
     try {
         if (sourceType === 'followers') {
-            // followers_1.json is usually an array directly
             if (Array.isArray(data)) {
                 processEntries(data);
             } else if (data?.followers && Array.isArray(data.followers)) {
                 processEntries(data.followers);
             }
         } else if (sourceType === 'following') {
-            // following.json can have multiple structures
             if (data?.relationships_following) {
                 processEntries(data.relationships_following);
             } else if (data?.following) {
@@ -71,7 +91,6 @@ const extractUsernames = (data, sourceType) => {
             } else if (Array.isArray(data)) {
                 processEntries(data);
             } else {
-                // Last resort: try to find any key that is an array
                 const keys = Object.keys(data);
                 for (const key of keys) {
                     if (Array.isArray(data[key])) {
@@ -165,7 +184,6 @@ const handleFile = async (file, sourceType) => {
     checkReady();
 };
 
-// Event listeners untuk input file
 DOM.followersInput.addEventListener('change', (e) => {
     if (e.target.files[0]) handleFile(e.target.files[0], 'followers');
 });
@@ -210,7 +228,6 @@ const analyze = () => {
     DOM.badgeNotFollowedBack.textContent = notFollowedBack.length;
     DOM.resultsSection.style.display = 'block';
 
-    // Render summary rings
     DOM.resultsSummary.innerHTML = `
         <div class="stat-ring"><span class="ring-val">${followingData.size}</span><span class="ring-label">Following</span></div>
         <div class="stat-ring"><span class="ring-val">${followersData.size}</span><span class="ring-label">Followers</span></div>
