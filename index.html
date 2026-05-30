@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaCheck · Vol. 01</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..500&family=Inter+Tight:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="paper-noise" aria-hidden="true"></div>
+    <div class="rail rail-left" aria-hidden="true"><span>InstaCheck</span></div>
+    <div class="rail rail-right" aria-hidden="true"><span>Tools · 2026</span></div>
+
+    <div class="meta-strip">
+        <div class="meta-strip-inner">
+            <span class="meta-vol">Vol. 01 / Issue Nº 26</span>
+            <span class="meta-filed">Filed under <strong>Open Tools</strong></span>
+            <span class="meta-status">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span class="meta-status-text">Aktif · ID-id</span>
+            </span>
+        </div>
+    </div>
+
+    <nav class="nav" role="navigation">
+        <div class="nav-inner">
+            <a href="#" class="brand-mark" aria-label="Beranda">Ø</a>
+            <div class="nav-links">
+                <a href="#panduan" class="nav-link">Panduan</a>
+                <a href="#upload" class="nav-link nav-cta">Mulai Cek</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <h1 class="hero-headline">
+                <span class="sans">Cek pertemanan</span><br>
+                <span class="serif">Instagram</span>
+                <span class="sans"> dengan presisi</span><span class="dot">.</span>
+            </h1>
+            <p class="hero-sub">Unggah data ekspor Instagram kamu dan temukan siapa yang tidak berteman balik. Semua pemrosesan berjalan secara lokal — aman, cepat, dan privat.</p>
+            <a href="#panduan" class="btn btn-ghost">Lihat panduan ↗</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section I: Panduan -->
+        <section id="panduan" class="section">
+            <div class="sec-rule">
+                <span class="roman">I.</span>
+                <span class="rule-meta">Panduan</span>
+                <span class="rule-page">001 / 004</span>
+            </div>
+            <div class="section-inner">
+                <h2 class="section-head reveal">Cara mendapatkan data Instagram (Mei 2026)<span class="dot">.</span></h2>
+                <p class="section-intro reveal">Instagram kini menggunakan <strong>Pusat Akun (Accounts Center)</strong> untuk permintaan data. Ikuti langkah di aplikasi HP atau browser web. File yang diunduh hanya berlaku <strong>4 hari</strong>.</p>
+
+                <h3 class="method-subhead reveal">Melalui Aplikasi HP (Android / iOS)</h3>
+                <div class="method-grid reveal-stagger">
+                    <div class="method-step reveal">
+                        <div class="step-head">
+                            <span class="step-num">I</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-title">Buka Pusat Akun</span>
+                        </div>
+                        <p class="step-desc">Buka profil &gt; menu <strong>☰</strong> &gt; pilih <strong>Pusat Akun</strong> (Accounts Center) di bagian paling atas.</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <div class="step-head">
+                            <span class="step-num">II</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-title">Informasi & Izin</span>
+                        </div>
+                        <p class="step-desc">Gulir ke bawah, ketuk <strong>Informasi dan izin Anda</strong> &gt; <strong>Ekspor informasi Anda</strong> &gt; <strong>Buat ekspor</strong>.</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <div class="step-head">
+                            <span class="step-num">III</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-title">Pilih Data</span>
+                        </div>
+                        <p class="step-desc">Pilih akun Instagram Anda, pilih <strong>Ekspor ke perangkat</strong>. Centang <strong>Pengikut dan mengikuti</strong> (Followers and following) saja. Format <strong>JSON</strong>, jangka waktu <strong>Semua waktu</strong>.</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <div class="step-head">
+                            <span class="step-num">IV</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-title">Verifikasi & Unduh</span>
+                        </div>
+                        <p class="step-desc">Masukkan kata sandi, ketuk <strong>Lanjutkan</strong>. Tunggu notifikasi/email (maks 48 jam). File tersedia di <strong>Unduhan yang tersedia</strong> selama 4 hari. Ekstrak ZIP dan unggah <code>followers_1.json</code> &amp; <code>following.json</code> di bawah.</p>
+                    </div>
+                </div>
+
+                <h3 class="method-subhead reveal" style="margin-top:48px;">Melalui Browser Web (PC / Laptop)</h3>
+                <div class="method-grid reveal-stagger">
+                    <div class="method-step reveal">
+                        <div class="step-head">
+                            <span class="step-num">I</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-title">Pengaturan Akun</span>
+                        </div>
+                        <p class="step-desc">Buka <a href="https://instagram.com" target="_blank" style="color:var(--ink-soft);text-decoration:underline;">Instagram.com</a> &gt; profil &gt; <strong>Pengaturan</strong> (Settings).</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <div class="step-head">
+                            <span class="step-num">II</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-title">Pusat Akun Meta</span>
+                        </div>
+                        <p class="step-desc">Klik <strong>Pusat Akun Meta</strong> (Meta Accounts Center) di sisi kiri layar.</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <div class="step-head">
+                            <span class="step-num">III</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-title">Ekspor Informasi</span>
+                        </div>
+                        <p class="step-desc">Pilih <strong>Informasi dan izin Anda</strong> &gt; <strong>Ekspor informasi Anda</strong>. Ikuti langkah yang sama seperti di aplikasi HP untuk memilih data.</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <div class="step-head">
+                            <span class="step-num">IV</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-title">Unduh & Unggah</span>
+                        </div>
+                        <p class="step-desc">Setelah file siap, unduh ZIP, ekstrak <code>followers_1.json</code> dan <code>following.json</code>, lalu unggah di bagian <strong>Unggah Data</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section II: Upload -->
+        <section id="upload" class="section">
+            <div class="sec-rule">
+                <span class="roman">II.</span>
+                <span class="rule-meta">Unggah Data</span>
+                <span class="rule-page">002 / 004</span>
+            </div>
+            <div class="section-inner">
+                <h2 class="section-head reveal">Seret & lepas file JSON<span class="dot">.</span></h2>
+                <div class="upload-grid">
+                    <div class="card reveal" id="followers-zone">
+                        <div class="card-num">01</div>
+                        <div class="card-content">
+                            <span class="card-eyebrow">Followers</span>
+                            <p class="card-file"><code>followers_1.json</code></p>
+                            <label class="upload-zone" for="followers-input">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                                <span id="followers-label">Pilih file</span>
+                                <input type="file" id="followers-input" accept=".json" hidden>
+                            </label>
+                            <div class="upload-status" id="followers-status"></div>
+                        </div>
+                        <div class="card-arrow">↗</div>
+                    </div>
+                    <div class="card reveal" id="following-zone">
+                        <div class="card-num">02</div>
+                        <div class="card-content">
+                            <span class="card-eyebrow">Following</span>
+                            <p class="card-file"><code>following.json</code></p>
+                            <label class="upload-zone" for="following-input">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                                <span id="following-label">Pilih file</span>
+                                <input type="file" id="following-input" accept=".json" hidden>
+                            </label>
+                            <div class="upload-status" id="following-status"></div>
+                        </div>
+                        <div class="card-arrow">↗</div>
+                    </div>
+                </div>
+                <div class="action-bar reveal">
+                    <button class="btn btn-primary" id="analyze-btn" disabled>
+                        Analisis ↗
+                    </button>
+                    <button class="btn btn-ghost" id="reset-btn" style="display:none;">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section III: Hasil (awalnya disembunyikan) -->
+        <section id="results" class="section" style="display:none;">
+            <div class="sec-rule">
+                <span class="roman">III.</span>
+                <span class="rule-meta">Hasil Analisis</span>
+                <span class="rule-page">003 / 004</span>
+            </div>
+            <div class="section-inner">
+                <h2 class="section-head">Temuan pertemanan<span class="dot">.</span></h2>
+                <div class="stats-row" id="results-summary"></div>
+                <div class="tab-bar" role="tablist">
+                    <button class="pill tab--active" role="tab" data-tab="not-following-back" aria-selected="true">
+                        Kamu follow, mereka tidak
+                        <span class="pill-count" id="badge-not-following-back">0</span>
+                    </button>
+                    <button class="pill" role="tab" data-tab="not-followed-back" aria-selected="false">
+                        Mereka follow, kamu tidak
+                        <span class="pill-count" id="badge-not-followed-back">0</span>
+                    </button>
+                </div>
+                <div class="results-panel" id="results-panel">
+                    <div class="results-list" id="results-list"></div>
+                </div>
+                <button class="btn btn-ghost" id="export-btn" style="margin-top:24px;">
+                    Ekspor TXT ↗
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-word">InstaCheck.</div>
+            <div class="footer-meta">
+                <span class="coord">6.2088° S · 106.8456° E</span>
+                <span class="sep">/</span>
+                <span>Ed. 2026</span>
+                <span class="sep">/</span>
+                <span>FIN.</span>
+            </div>
+            <div class="pulse-dot footer-pulse" aria-hidden="true"></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
