@@ -482,7 +482,28 @@ strong { font-weight: 600; }
     justify-content: center;
     flex-shrink: 0;
 }
-.result-username { font-weight: 500; color: var(--ink); word-break: break-word; }
+.result-username {
+    font-weight: 500;
+    color: var(--ink);
+    word-break: break-word;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color var(--ease);
+}
+.result-username:hover {
+    color: var(--coral);
+    text-decoration: underline;
+}
+.username-link-arrow {
+    font-size: 11px;
+    opacity: 0.5;
+    transition: transform var(--ease), opacity var(--ease);
+}
+.result-username:hover .username-link-arrow {
+    opacity: 1;
+    transform: translate(1px, -1px);
+}
 .result-empty {
     padding: 48px 16px;
     text-align: center;

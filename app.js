@@ -258,7 +258,10 @@ const renderTab = (tab) => {
         item.style.animation = `fadeInUp 0.4s cubic-bezier(0.16,1,0.3,1) ${index * 0.03}s both`;
         item.innerHTML = `
             <div class="result-avatar">${icons.user}</div>
-            <span class="result-username">@${username}</span>
+            <a href="https://www.instagram.com/${username}/" target="_blank" rel="noopener noreferrer" class="result-username">
+                @${username}
+                <span class="username-link-arrow">↗</span>
+            </a>
         `;
         DOM.resultsList.appendChild(item);
     });
